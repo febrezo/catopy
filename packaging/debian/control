@@ -1,0 +1,21 @@
+Source: clipcat
+Section: utils
+Priority: optional
+Maintainer: Felix <felix@example.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ cargo,
+ rustc,
+ pkg-config
+Standards-Version: 4.7.0
+Homepage: https://github.com/felix/clipcat
+Rules-Requires-Root: no
+
+Package: clipcat
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: Copy file contents to clipboard safely from the terminal
+ clipcat is a Rust command line utility that copies text files to the
+ clipboard with size guards and optional line slicing.

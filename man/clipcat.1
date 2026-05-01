@@ -1,0 +1,67 @@
+.TH CLIPCAT 1 "May 2026" "clipcat 0.1.0" "User Commands"
+.SH NAME
+clipcat \- copy file contents to the system clipboard safely
+.SH SYNOPSIS
+.B clipcat
+.RI [ OPTIONS ] " FILE"
+.SH DESCRIPTION
+.B clipcat
+reads text from a file and places it in the system clipboard.
+It includes size guards to avoid accidentally copying very large files.
+On Linux, clipboard handoff uses a short wait to improve reliability for short-lived processes.
+.SH OPTIONS
+.TP
+.BR --head " " N
+Copy only the first N lines.
+.TP
+.BR --tail " " N
+Copy only the last N lines.
+.TP
+.B --force
+Bypass the file size guard.
+.TP
+.BR --max-bytes " " SIZE
+Maximum file size before refusing copy. Supports suffixes K, M, G.
+.TP
+.B --no-color
+Disable ANSI color output.
+.TP
+.BR -h , " " --help
+Print help information.
+.TP
+.BR -V , " " --version
+Print version information.
+.SH CONFIG FILE
+Optional configuration file:
+.I ~/.clipcat.rc
+.PP
+Supported keys:
+.TP
+.B behave_as_cat
+If true, prints copied content to stdout.
+.TP
+.B warning_size_limit
+Default maximum file size guard.
+.TP
+.B default_head
+Default value for --head.
+.TP
+.B default_tail
+Default value for --tail.
+.SH EXAMPLES
+.TP
+Copy full file:
+.B clipcat notes.txt
+.TP
+Copy first 20 lines:
+.B clipcat --head 20 /var/log/messages
+.TP
+Copy last 100 lines:
+.B clipcat --tail 100 app.log
+.TP
+Override limit:
+.B clipcat --max-bytes 5M dump.txt
+.SH AUTHOR
+clipcat maintainers.
+.SH LICENSE
+MIT License.

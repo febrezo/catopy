@@ -1,0 +1,5 @@
+# Optional clipcat user config
+behave_as_cat=true
+warning_size_limit=1000000
+default_head=0
+default_tail=0

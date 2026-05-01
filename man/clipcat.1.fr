@@ -1,0 +1,67 @@
+.TH CLIPCAT 1 "mai 2026" "clipcat 0.1.0" "Commandes utilisateur"
+.SH NOM
+clipcat \- copier le contenu de fichiers dans le presse-papiers système de manière sûre
+.SH SYNOPSIS
+.B clipcat
+.RI [ OPTIONS ] " FICHIER"
+.SH DESCRIPTION
+.B clipcat
+lit le texte d'un fichier et le place dans le presse-papiers du système.
+Il inclut des contrôles de taille pour éviter de copier accidentellement de très gros fichiers.
+Sous Linux, le transfert du presse-papiers utilise une courte attente pour améliorer la fiabilité pour les processus de courte durée.
+.SH OPTIONS
+.TP
+.BR --head " " N
+Copie uniquement les N premières lignes.
+.TP
+.BR --tail " " N
+Copie uniquement les N dernières lignes.
+.TP
+.B --force
+Contourne le contrôle de taille de fichier.
+.TP
+.BR --max-bytes " " TAILLE
+Taille maximale du fichier avant de refuser la copie. Accepte les suffixes K, M, G.
+.TP
+.B --no-color
+Désactive la sortie en couleur ANSI.
+.TP
+.BR -h , " " --help
+Affiche l'information d'aide.
+.TP
+.BR -V , " " --version
+Affiche l'information de version.
+.SH FICHIER DE CONFIGURATION
+Fichier de configuration facultatif :
+.I ~/.clipcat.rc
+.PP
+Clés supportées :
+.TP
+.B behave_as_cat
+Si vrai, affiche le contenu copié sur stdout.
+.TP
+.B warning_size_limit
+Limite de taille de fichier par défaut.
+.TP
+.B default_head
+Valeur par défaut pour --head.
+.TP
+.B default_tail
+Valeur par défaut pour --tail.
+.SH EXEMPLES
+.TP
+Copier un fichier complet :
+.B clipcat notes.txt
+.TP
+Copier les 20 premières lignes :
+.B clipcat --head 20 /var/log/messages
+.TP
+Copier les 100 dernières lignes :
+.B clipcat --tail 100 app.log
+.TP
+Contourner la limite :
+.B clipcat --max-bytes 5M dump.txt
+.SH AUTEUR
+Mainteneurs de clipcat.
+.SH LICENCE
+Licence MIT.
