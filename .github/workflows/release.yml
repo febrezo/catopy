@@ -31,7 +31,12 @@ jobs:
       - uses: taiki-e/install-action@cross
       - uses: Swatinem/rust-cache@v2
 
-      - name: Build target
+      - name: Build GNU target natively
+        if: matrix.target == 'x86_64-unknown-linux-gnu'
+        run: cargo build --release --target ${{ matrix.target }}
+
+      - name: Build cross target
+        if: matrix.target != 'x86_64-unknown-linux-gnu'
         run: cross build --release --target ${{ matrix.target }}
 
       - name: Package archive and checksum
