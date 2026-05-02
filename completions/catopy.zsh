@@ -1,4 +1,4 @@
-#compdef clipcat
+#compdef catopy
 
 _arguments \
   '--head[Copy only first N lines]:lines:(10 20 50 100)' \

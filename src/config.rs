@@ -25,10 +25,9 @@ impl Default for Config {
 
 impl Config {
     pub fn load() -> Result<Self> {
-        let path = rc_path();
-        if !path.exists() {
+        let Some(path) = rc_paths().into_iter().find(|path| path.exists()) else {
             return Ok(Self::default());
-        }
+        };
 
         let raw = fs::read_to_string(&path)
             .with_context(|| format!("failed to read config file {}", path.display()))?;
@@ -111,12 +110,12 @@ pub fn parse_size(value: &str) -> Option<u64> {
     base.checked_mul(mult)
 }
 
-fn rc_path() -> PathBuf {
+fn rc_paths() -> Vec<PathBuf> {
     let home = env::var_os("HOME")
         .or_else(|| env::var_os("USERPROFILE"))
         .map(PathBuf::from)
         .unwrap_or_else(|| PathBuf::from("."));
-    home.join(".clipcat.rc")
+    vec![home.join(".catopy.rc"), home.join(".clipcat.rc")]
 }
 
 #[cfg(test)]

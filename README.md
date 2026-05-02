@@ -1,6 +1,6 @@
-# clipcat
+# catopy
 
-clipcat is a small Rust CLI that copies file contents to the system clipboard with safety limits.
+catopy is a small Rust CLI that copies file contents to the system clipboard with safety limits.
 
 ## Features
 
@@ -15,7 +15,7 @@ clipcat is a small Rust CLI that copies file contents to the system clipboard wi
 ### From crates.io
 
 ```bash
-cargo install clipcat
+cargo install catopy
 ```
 
 ### From GitHub Release binaries
@@ -25,25 +25,25 @@ cargo install clipcat
 3. Verify checksum:
 
 ```bash
-sha256sum -c clipcat-<version>-<target>.tar.gz.sha256
+sha256sum -c catopy-<version>-<target>.tar.gz.sha256
 ```
 
-4. Extract and place `clipcat` in your `PATH`.
+4. Extract and place `catopy` in your `PATH`.
 
 ## Quick Start
 
 ```bash
-clipcat file.txt
-clipcat --head 50 logs.txt
-clipcat --tail 100 logs.txt
-clipcat --max-bytes 5M notes.md
-clipcat --force big_dump.txt
+catopy file.txt
+catopy --head 50 logs.txt
+catopy --tail 100 logs.txt
+catopy --max-bytes 5M notes.md
+catopy --force big_dump.txt
 ```
 
 ## Usage
 
 ```text
-clipcat [OPTIONS] <FILE>
+catopy [OPTIONS] <FILE>
 ```
 
 Main options:
@@ -57,14 +57,18 @@ Main options:
 Common real-world examples:
 
 ```bash
-clipcat README.md
-clipcat --head 10 /var/log/messages
-clipcat --tail 20 app.log
+catopy README.md
+catopy --head 10 /var/log/messages
+catopy --tail 20 app.log
 ```
 
 ## Configuration file
 
 Optional user config path:
+
+- `~/.catopy.rc`
+
+Legacy fallback still supported:
 
 - `~/.clipcat.rc`
 
@@ -80,17 +84,18 @@ default_tail=0
 Precedence:
 
 1. CLI arguments
-2. `~/.clipcat.rc`
-3. Internal defaults
+2. `~/.catopy.rc`
+3. `~/.clipcat.rc`
+4. Internal defaults
 
 ## Man page and shell completions
 
 Static assets included in repository:
 
-- `man/clipcat.1`
-- `completions/clipcat.bash`
-- `completions/clipcat.zsh`
-- `completions/clipcat.fish`
+- `man/catopy.1`
+- `completions/catopy.bash`
+- `completions/catopy.zsh`
+- `completions/catopy.fish`
 
 ## Development
 
@@ -128,12 +133,12 @@ cargo publish
 
 ### Fedora COPR (planned)
 
-- RPM spec skeleton: `packaging/rpm/clipcat.spec`
+- RPM spec skeleton: `packaging/rpm/catopy.spec`
 - Initial validation:
 
 ```bash
 sudo dnf install rpmdevtools rpmlint mock fedpkg
-rpmlint packaging/rpm/clipcat.spec
+rpmlint packaging/rpm/catopy.spec
 ```
 
 ### Debian/Ubuntu `.deb`

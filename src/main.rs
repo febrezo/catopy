@@ -21,7 +21,7 @@ const LINUX_CLIPBOARD_WAIT_MS: u64 = 200;
 
 #[derive(Debug, Parser)]
 #[command(
-    name = "clipcat",
+    name = "catopy",
     version,
     about = "Copy file contents to clipboard safely"
 )]

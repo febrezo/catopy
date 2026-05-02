@@ -1,6 +1,6 @@
-# Packaging plan for clipcat
+# Packaging plan for catopy
 
-This document describes the release and packaging route for clipcat.
+This document describes the release and packaging route for catopy.
 
 ## Route
 
@@ -39,13 +39,13 @@ Do not run `cargo publish` from CI.
 
 ## Fedora COPR and RPM
 
-RPM spec template is at `packaging/rpm/clipcat.spec`.
+RPM spec template is at `packaging/rpm/catopy.spec`.
 
 Validation tools:
 
 ```bash
 sudo dnf install rpmdevtools rpmlint mock fedpkg
-rpmlint packaging/rpm/clipcat.spec
+rpmlint packaging/rpm/catopy.spec
 ```
 
 Notes:

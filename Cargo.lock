@@ -144,6 +144,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f1fe948ff07f4bd06c30984e69f5b4899c516a3ef74f34df92a2df2ab535495"
 
 [[package]]
+name = "catopy"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "arboard",
+ "assert_cmd",
+ "clap",
+ "predicates",
+ "tempfile",
+]
+
+[[package]]
 name = "cfg-if"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -196,18 +208,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bde03770d3df201d4fb868f2c9c59e66a3e4e2bd06692a0fe701e7103c7e84d4"
 dependencies = [
  "error-code",
-]
-
-[[package]]
-name = "clipcat"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "arboard",
- "assert_cmd",
- "clap",
- "predicates",
- "tempfile",
 ]
 
 [[package]]

@@ -1,4 +1,4 @@
-Source: clipcat
+Source: catopy
 Section: utils
 Priority: optional
 Maintainer: Felix <felix@example.com>
@@ -8,14 +8,14 @@ Build-Depends:
  rustc,
  pkg-config
 Standards-Version: 4.7.0
-Homepage: https://github.com/felix/clipcat
+Homepage: https://github.com/febrezo/catopy
 Rules-Requires-Root: no
 
-Package: clipcat
+Package: catopy
 Architecture: any
 Depends:
  ${misc:Depends},
  ${shlibs:Depends}
 Description: Copy file contents to clipboard safely from the terminal
- clipcat is a Rust command line utility that copies text files to the
+ catopy is a Rust command line utility that copies text files to the
  clipboard with size guards and optional line slicing.

@@ -40,7 +40,7 @@ jobs:
       - name: Upload intermediate artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: clipcat-${{ matrix.target }}
+          name: catopy-${{ matrix.target }}
           path: |
             dist/*.tar.gz
             dist/*.sha256

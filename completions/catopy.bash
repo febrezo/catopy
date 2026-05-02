@@ -1,4 +1,4 @@
-_clipcat()
+_catopy()
 {
     local cur prev
     COMPREPLY=()
@@ -19,4 +19,4 @@ _clipcat()
     COMPREPLY=( $(compgen -W "--head --tail --force --max-bytes --no-color --help --version" -- "$cur") )
 }
 
-complete -F _clipcat clipcat
+complete -F _catopy catopy

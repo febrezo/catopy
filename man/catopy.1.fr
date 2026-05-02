@@ -1,11 +1,11 @@
-.TH CLIPCAT 1 "mai 2026" "clipcat 0.1.0" "Commandes utilisateur"
+.TH CATOPY 1 "mai 2026" "catopy 0.1.0" "Commandes utilisateur"
 .SH NOM
-clipcat \- copier le contenu de fichiers dans le presse-papiers système de manière sûre
+catopy \- copier le contenu de fichiers dans le presse-papiers système de manière sûre
 .SH SYNOPSIS
-.B clipcat
+.B catopy
 .RI [ OPTIONS ] " FICHIER"
 .SH DESCRIPTION
-.B clipcat
+.B catopy
 lit le texte d'un fichier et le place dans le presse-papiers du système.
 Il inclut des contrôles de taille pour éviter de copier accidentellement de très gros fichiers.
 Sous Linux, le transfert du presse-papiers utilise une courte attente pour améliorer la fiabilité pour les processus de courte durée.
@@ -33,7 +33,7 @@ Affiche l'information d'aide.
 Affiche l'information de version.
 .SH FICHIER DE CONFIGURATION
 Fichier de configuration facultatif :
-.I ~/.clipcat.rc
+.I ~/.catopy.rc
 .PP
 Clés supportées :
 .TP
@@ -51,17 +51,17 @@ Valeur par défaut pour --tail.
 .SH EXEMPLES
 .TP
 Copier un fichier complet :
-.B clipcat notes.txt
+.B catopy notes.txt
 .TP
 Copier les 20 premières lignes :
-.B clipcat --head 20 /var/log/messages
+.B catopy --head 20 /var/log/messages
 .TP
 Copier les 100 dernières lignes :
-.B clipcat --tail 100 app.log
+.B catopy --tail 100 app.log
 .TP
 Contourner la limite :
-.B clipcat --max-bytes 5M dump.txt
+.B catopy --max-bytes 5M dump.txt
 .SH AUTEUR
-Mainteneurs de clipcat.
+Mainteneurs de catopy.
 .SH LICENCE
-Licence MIT.
+Licence GPLv3.

@@ -8,7 +8,7 @@ fi
 
 target="$1"
 version="$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -n1)"
-name="clipcat"
+name="catopy"
 dist_dir="dist"
 bundle_dir="${dist_dir}/${name}-${version}-${target}"
 

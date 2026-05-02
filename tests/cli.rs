@@ -6,7 +6,7 @@ use tempfile::NamedTempFile;
 
 #[test]
 fn help_includes_no_color_flag() {
-    Command::cargo_bin("clipcat")
+    Command::cargo_bin("catopy")
         .expect("binary exists")
         .arg("--help")
         .assert()
@@ -20,7 +20,7 @@ fn large_file_prints_two_line_warning() {
     writeln!(file, "line1").expect("write");
     writeln!(file, "line2").expect("write");
 
-    Command::cargo_bin("clipcat")
+    Command::cargo_bin("catopy")
         .expect("binary exists")
         .arg(file.path())
         .arg("--max-bytes")
@@ -36,7 +36,7 @@ fn large_file_prints_two_line_warning() {
 
 #[test]
 fn head_and_tail_conflict_returns_error() {
-    Command::cargo_bin("clipcat")
+    Command::cargo_bin("catopy")
         .expect("binary exists")
         .arg("file.txt")
         .arg("--head")
@@ -53,7 +53,7 @@ fn head_and_tail_conflict_returns_error() {
 
 #[test]
 fn missing_file_returns_read_error() {
-    Command::cargo_bin("clipcat")
+    Command::cargo_bin("catopy")
         .expect("binary exists")
         .arg("definitely_missing_file.txt")
         .arg("--no-color")

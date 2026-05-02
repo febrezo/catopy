@@ -1,11 +1,11 @@
-.TH CLIPCAT 1 "mayo de 2026" "clipcat 0.1.0" "Comandos de Usuario"
+.TH CATOPY 1 "mayo de 2026" "catopy 0.1.0" "Comandos de Usuario"
 .SH NOMBRE
-clipcat \- copiar contenido de archivos al portapapeles del sistema de forma segura
+catopy \- copiar contenido de archivos al portapapeles del sistema de forma segura
 .SH SINOPSIS
-.B clipcat
+.B catopy
 .RI [ OPCIONES ] " ARCHIVO"
 .SH DESCRIPCIÓN
-.B clipcat
+.B catopy
 lee texto de un archivo y lo coloca en el portapapeles del sistema.
 Incluye controles de tamaño para evitar copiar accidentalmente archivos muy grandes.
 En Linux, la transferencia del portapapeles usa una breve espera para mejorar la confiabilidad en procesos de corta duración.
@@ -33,7 +33,7 @@ Imprime información de ayuda.
 Imprime información de versión.
 .SH ARCHIVO DE CONFIGURACIÓN
 Archivo de configuración opcional:
-.I ~/.clipcat.rc
+.I ~/.catopy.rc
 .PP
 Claves soportadas:
 .TP
@@ -51,17 +51,17 @@ Valor predeterminado para --tail.
 .SH EJEMPLOS
 .TP
 Copiar archivo completo:
-.B clipcat notas.txt
+.B catopy notas.txt
 .TP
 Copiar primeras 20 líneas:
-.B clipcat --head 20 /var/log/messages
+.B catopy --head 20 /var/log/messages
 .TP
 Copiar últimas 100 líneas:
-.B clipcat --tail 100 app.log
+.B catopy --tail 100 app.log
 .TP
 Anular límite:
-.B clipcat --max-bytes 5M volcado.txt
+.B catopy --max-bytes 5M volcado.txt
 .SH AUTOR
-Mantenedores de clipcat.
+Mantenedores de catopy.
 .SH LICENCIA
-Licencia MIT.
+Licencia GPLv3.

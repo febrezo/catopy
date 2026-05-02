@@ -1,11 +1,11 @@
-.TH CLIPCAT 1 "May 2026" "clipcat 0.1.0" "User Commands"
+.TH CATOPY 1 "May 2026" "catopy 0.1.0" "User Commands"
 .SH NAME
-clipcat \- copy file contents to the system clipboard safely
+catopy \- copy file contents to the system clipboard safely
 .SH SYNOPSIS
-.B clipcat
+.B catopy
 .RI [ OPTIONS ] " FILE"
 .SH DESCRIPTION
-.B clipcat
+.B catopy
 reads text from a file and places it in the system clipboard.
 It includes size guards to avoid accidentally copying very large files.
 On Linux, clipboard handoff uses a short wait to improve reliability for short-lived processes.
@@ -33,7 +33,7 @@ Print help information.
 Print version information.
 .SH CONFIG FILE
 Optional configuration file:
-.I ~/.clipcat.rc
+.I ~/.catopy.rc
 .PP
 Supported keys:
 .TP
@@ -51,17 +51,17 @@ Default value for --tail.
 .SH EXAMPLES
 .TP
 Copy full file:
-.B clipcat notes.txt
+.B catopy notes.txt
 .TP
 Copy first 20 lines:
-.B clipcat --head 20 /var/log/messages
+.B catopy --head 20 /var/log/messages
 .TP
 Copy last 100 lines:
-.B clipcat --tail 100 app.log
+.B catopy --tail 100 app.log
 .TP
 Override limit:
-.B clipcat --max-bytes 5M dump.txt
+.B catopy --max-bytes 5M dump.txt
 .SH AUTHOR
-clipcat maintainers.
+catopy maintainers.
 .SH LICENSE
-MIT License.
+GPLv3.

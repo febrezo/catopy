@@ -1,4 +1,4 @@
-# Contributing to clipcat
+# Contributing to catopy
 
 Thank you for your interest in contributing! This document provides guidelines and instructions.
 
@@ -13,8 +13,8 @@ Thank you for your interest in contributing! This document provides guidelines a
 ### Development Setup
 
 ```bash
-git clone https://github.com/felix/clipcat.git
-cd clipcat
+git clone https://github.com/febrezo/catopy.git
+cd catopy
 cargo build
 cargo test
 ```
@@ -101,7 +101,7 @@ feat: add --max-lines flag to limit output lines
 ## Documentation
 
 - **Code comments**: Explain *why*, not what
-- **Man pages**: Update `man/clipcat.1*` files
+- **Man pages**: Update `man/catopy.1*` files
 - **README.md**: Update installation/usage sections
 - **CHANGELOG.md**: Document changes
 
@@ -115,4 +115,4 @@ Open an **Issue** with tag `question:` or start a **Discussion**.
 
 ---
 
-**Thank you for contributing to clipcat!** 🎉
+**Thank you for contributing to catopy!** 🎉

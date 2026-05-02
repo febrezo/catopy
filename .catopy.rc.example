@@ -1,4 +1,4 @@
-# Optional clipcat user config
+# Optional catopy user config
 behave_as_cat=true
 warning_size_limit=1000000
 default_head=0

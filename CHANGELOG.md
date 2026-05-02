@@ -4,13 +4,14 @@
 
 ### Added
 
+- Project renamed from `clipcat` to `catopy` to avoid collisions with an existing crate and repository name.
 - Professional CLI output style with short success, warning, and error messages.
 - New output color controls: --no-color and NO_COLOR.
 - Integration test suite in tests/ with CLI-focused behavior checks.
 - Packaging and distribution infrastructure:
-  - Man page at `man/clipcat.1`
+  - Man page at `man/catopy.1`
   - Static shell completions for bash, zsh, and fish
-  - RPM spec skeleton at `packaging/rpm/clipcat.spec`
+  - RPM spec skeleton at `packaging/rpm/catopy.spec`
   - Debian packaging skeleton at `packaging/debian/`
   - Packaging process documentation in `PACKAGING.md`
   - Maintenance `Makefile` with release/package-check targets
