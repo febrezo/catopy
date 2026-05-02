@@ -1,5 +1,5 @@
 Name:           catopy
-Version:        0.2.0
+Version:        0.2.1
 Release:        1%{?dist}
 Summary:        Copy file content to clipboard safely from the terminal
 License:        GPLv3
@@ -20,7 +20,7 @@ size guards and optional head/tail slicing.
 %cargo_generate_buildrequires
 
 %build
-%cargo_build --release
+%cargo_build
 
 %install
 install -Dm0755 target/release/catopy %{buildroot}%{_bindir}/catopy
@@ -47,5 +47,5 @@ install -Dm0644 completions/catopy.fish %{buildroot}%{_datadir}/fish/vendor_comp
 %{_datadir}/fish/vendor_completions.d/catopy.fish
 
 %changelog
-* Sat May 02 2026 Felix <felix@example.com> - 0.2.0-1
+* Sat May 03 2026 Felix <felix@example.com> - 0.2.1-1
 - Initial RPM packaging skeleton for COPR/Fedora.
