@@ -1,4 +1,4 @@
-catopy (0.1.0-1) unstable; urgency=medium
+catopy (0.2.0-1) unstable; urgency=medium
 
   * Initial Debian packaging skeleton.
 

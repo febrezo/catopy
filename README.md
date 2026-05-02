@@ -119,7 +119,7 @@ cargo clippy --all-targets --all-features
 ### GitHub Releases
 
 - Workflow: `.github/workflows/release.yml`
-- Trigger: tags like `v0.1.0`
+- Trigger: tags like `v0.2.0`
 - Builds release archives and SHA256 checksums.
 
 ### crates.io

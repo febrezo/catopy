@@ -1,4 +1,4 @@
-.TH CATOPY 1 "mayo de 2026" "catopy 0.1.0" "Comandos de Usuario"
+.TH CATOPY 1 "mayo de 2026" "catopy 0.2.0" "Comandos de Usuario"
 .SH NOMBRE
 catopy \- copiar contenido de archivos al portapapeles del sistema de forma segura
 .SH SINOPSIS

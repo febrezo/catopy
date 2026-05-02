@@ -1,6 +1,6 @@
 [package]
 name = "catopy"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 description = "Copy file content to clipboard safely with size guards"
 license = "GPL-3.0"

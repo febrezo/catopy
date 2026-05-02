@@ -1,5 +1,5 @@
 Name:           catopy
-Version:        0.1.0
+Version:        0.2.0
 Release:        1%{?dist}
 Summary:        Copy file content to clipboard safely from the terminal
 License:        GPLv3
@@ -47,5 +47,5 @@ install -Dm0644 completions/catopy.fish %{buildroot}%{_datadir}/fish/vendor_comp
 %{_datadir}/fish/vendor_completions.d/catopy.fish
 
 %changelog
-* Thu May 01 2026 Felix <felix@example.com> - 0.1.0-1
+* Sat May 02 2026 Felix <felix@example.com> - 0.2.0-1
 - Initial RPM packaging skeleton for COPR/Fedora.

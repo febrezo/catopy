@@ -1,4 +1,4 @@
-.TH CATOPY 1 "mai 2026" "catopy 0.1.0" "Commandes utilisateur"
+.TH CATOPY 1 "mai 2026" "catopy 0.2.0" "Commandes utilisateur"
 .SH NOM
 catopy \- copier le contenu de fichiers dans le presse-papiers système de manière sûre
 .SH SYNOPSIS
