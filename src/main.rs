@@ -118,11 +118,11 @@ fn copy_to_clipboard(content: &str) -> Result<()> {
     #[cfg(target_os = "linux")]
     {
         let deadline = Instant::now() + Duration::from_millis(LINUX_CLIPBOARD_WAIT_MS);
-        return clipboard
+        clipboard
             .set()
             .wait_until(deadline)
             .text(content.to_string())
-            .context("failed to set clipboard text");
+            .context("failed to set clipboard text")
     }
 
     #[cfg(not(target_os = "linux"))]

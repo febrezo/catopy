@@ -6,6 +6,9 @@ on:
       - "v*"
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: write
 
@@ -23,7 +26,7 @@ jobs:
           - x86_64-pc-windows-gnu
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
       - uses: taiki-e/install-action@cross
       - uses: Swatinem/rust-cache@v2

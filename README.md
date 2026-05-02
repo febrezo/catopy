@@ -30,13 +30,7 @@ sha256sum -c clipcat-<version>-<target>.tar.gz.sha256
 
 4. Extract and place `clipcat` in your `PATH`.
 
-### Build locally
-
-```bash
-cargo build --release
-```
-
-## Usage
+## Quick Start
 
 ```bash
 clipcat file.txt
@@ -44,6 +38,28 @@ clipcat --head 50 logs.txt
 clipcat --tail 100 logs.txt
 clipcat --max-bytes 5M notes.md
 clipcat --force big_dump.txt
+```
+
+## Usage
+
+```text
+clipcat [OPTIONS] <FILE>
+```
+
+Main options:
+
+- `--head <N>`: copy only first N lines.
+- `--tail <N>`: copy only last N lines.
+- `--max-bytes <SIZE>`: set size guard (for example `1M`, `500K`).
+- `--force`: ignore size guard and copy anyway.
+- `--no-color`: disable ANSI colors.
+
+Common real-world examples:
+
+```bash
+clipcat README.md
+clipcat --head 10 /var/log/messages
+clipcat --tail 20 app.log
 ```
 
 ## Configuration file
@@ -75,6 +91,23 @@ Static assets included in repository:
 - `completions/clipcat.bash`
 - `completions/clipcat.zsh`
 - `completions/clipcat.fish`
+
+## Development
+
+### Build locally
+
+```bash
+cargo build
+cargo build --release
+```
+
+### Test and quality checks
+
+```bash
+cargo test
+cargo fmt --check
+cargo clippy --all-targets --all-features
+```
 
 ## Packaging status
 
@@ -117,14 +150,6 @@ cargo deb
   - `packaging/debian/rules`
   - `packaging/debian/changelog`
   - `packaging/debian/copyright`
-
-## Examples
-
-```bash
-clipcat README.md
-clipcat --head 10 /var/log/messages
-clipcat --tail 20 app.log
-```
 
 ## Cross-compilation targets
 
