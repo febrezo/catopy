@@ -16,6 +16,7 @@ include = [
 	"README.md",
 	"CHANGELOG.md",
 	"LICENSE",
+	"catopy.spec",
 	"man/catopy.1",
 	"man/catopy.1.es",
 	"man/catopy.1.fr",

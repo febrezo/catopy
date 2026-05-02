@@ -131,14 +131,43 @@ cargo publish --dry-run
 cargo publish
 ```
 
-### Fedora COPR (planned)
+### Fedora COPR
 
-- RPM spec skeleton: `packaging/rpm/catopy.spec`
+- RPM spec: `catopy.spec`
 - Initial validation:
 
 ```bash
-sudo dnf install rpmdevtools rpmlint mock fedpkg
-rpmlint packaging/rpm/catopy.spec
+sudo dnf install -y copr-cli rpmdevtools rpmlint mock fedora-packager rust-packaging
+rpmlint catopy.spec
+mock -r fedora-rawhide-x86_64 --buildsrpm --spec catopy.spec --sources .
+mock -r fedora-rawhide-x86_64 --rebuild *.src.rpm
+```
+
+- Build in COPR from Git tag:
+
+```bash
+copr-cli buildscm febrezo/catopy \
+  --clone-url https://github.com/febrezo/catopy.git \
+  --commit v0.2.0 \
+  --spec catopy.spec
+```
+
+- User install (after COPR project is published):
+
+```bash
+sudo dnf copr enable febrezo/catopy
+sudo dnf install catopy
+```
+
+### openSUSE (OBS)
+
+Use OBS after COPR:
+
+```bash
+sudo dnf install osc
+osc checkout home:febrezo catopy
+osc build openSUSE_Tumbleweed x86_64 catopy.spec
+osc commit
 ```
 
 ### Debian/Ubuntu `.deb`
@@ -149,6 +178,8 @@ rpmlint packaging/rpm/catopy.spec
 cargo install cargo-deb
 cargo deb
 ```
+
+- For Debian/Ubuntu long-term packaging, use `dh-cargo`/`debcargo` workflows.
 
 - Debian packaging skeleton:
   - `packaging/debian/control`
